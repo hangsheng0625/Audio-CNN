@@ -96,6 +96,7 @@ def train():
 
     esc50_dir = Path("/opt/esc50-data")
 
+    # Sample rate = 44100
     train_transform = nn.Sequential(
         T.MelSpectrogram(
             sample_rate=22050,
@@ -110,6 +111,7 @@ def train():
         T.TimeMasking(time_mask_param=80)
     )
 
+    # Sample rate = 44100
     val_transform = nn.Sequential(
         T.MelSpectrogram(
             sample_rate=22050,
